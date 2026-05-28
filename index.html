@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atlasly — your travel atlas</title>
+  <link rel="stylesheet" href="styles.css?v=4" />
+</head>
+<body>
+  <header class="hero">
+    <div class="brand">
+      <h1>Atlasly</h1>
+      <p class="tagline">Mark where you've been. Discover where to go.</p>
+    </div>
+
+    <div class="stats">
+      <div class="counter">
+        <span id="visited-count">0</span>
+        <span class="counter-divider">/</span>
+        <span id="total-count">—</span>
+        <span class="counter-label">visited</span>
+      </div>
+      <div class="counter planned-counter">
+        <span id="planned-count">0</span>
+        <span class="counter-label">planned</span>
+      </div>
+      <div class="counter cities-counter">
+        <span id="cities-count">0</span>
+        <span class="counter-label">cities</span>
+      </div>
+      <div class="progress">
+        <div id="progress-bar" class="progress-bar"></div>
+      </div>
+      <button id="share-btn" class="action-btn" type="button">Share</button>
+      <button id="reset-btn" class="reset-btn" type="button">Reset</button>
+    </div>
+  </header>
+
+  <main>
+    <div id="map-wrap" class="map-wrap">
+      <div id="map-loading" class="map-loading">Loading map…</div>
+    </div>
+
+    <aside class="sidebar">
+      <div class="mode-toggle" role="tablist" aria-label="Marking mode">
+        <button class="mode-btn" data-mode="visited" type="button">Visited</button>
+        <button class="mode-btn" data-mode="planned" type="button">Wishlist</button>
+      </div>
+
+      <div class="search">
+        <input id="search-input" type="search" placeholder="Search a country or city…" autocomplete="off" spellcheck="false" />
+        <div id="search-status" class="search-status" hidden></div>
+        <ul id="search-results" class="search-results" hidden></ul>
+      </div>
+
+      <section class="section">
+        <h2>By continent</h2>
+        <ul id="continent-list" class="continent-list"></ul>
+      </section>
+
+      <section class="section">
+        <h2>Cities <span id="cities-badge" class="count-badge">0</span></h2>
+        <ul id="cities-list" class="cities-list">
+          <li class="empty">Search for a city above to add it.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Countries</h2>
+        <ul id="visited-list" class="visited-list">
+          <li class="empty">Click a country on the map or search for one.</li>
+        </ul>
+      </section>
+    </aside>
+  </main>
+
+  <div id="tooltip" class="tooltip" hidden></div>
+  <div id="toast" class="toast" hidden></div>
+
+  <script src="app.js?v=4"></script>
+</body>
+</html>
