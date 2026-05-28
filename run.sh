@@ -5,7 +5,7 @@ DOCKER_USER="${DOCKER_USER:-awmanoj}"
 IMAGE_NAME="${IMAGE_NAME:-atlasly}"
 TAG="${TAG:-latest}"
 CONTAINER_NAME="${CONTAINER_NAME:-atlasly}"
-HOST_PORT="${HOST_PORT:-8000}"
+HOST_PORT="${HOST_PORT:-8090}"
 
 IMAGE="${DOCKER_USER}/${IMAGE_NAME}:${TAG}"
 
@@ -21,7 +21,7 @@ echo "Starting ${CONTAINER_NAME} on port ${HOST_PORT}..."
 docker run -d \
   --name "${CONTAINER_NAME}" \
   --restart unless-stopped \
-  -p "${HOST_PORT}:8000" \
+  -p "${HOST_PORT}:8090" \
   "${IMAGE}"
 
 echo "Running: http://localhost:${HOST_PORT}"
